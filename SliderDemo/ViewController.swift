@@ -21,11 +21,14 @@ class ViewController: UIViewController {
         mySlider = SliderObject(frame: CGRectMake(150, 150, 40, 200))
         rootView.addSubview(mySlider)
         
-        
         let pan:UIPanGestureRecognizer = UIPanGestureRecognizer(target:self, action:Selector("handlePan:"))
-         mySlider.addGestureRecognizer(pan)
         let pinch:UIPinchGestureRecognizer = UIPinchGestureRecognizer(target:self, action:Selector("handlePinch:"))
+        mySlider.addGestureRecognizer(pan)
         mySlider.addGestureRecognizer(pinch)
+        
+        //rootView.userInteractionEnabled = true
+        //rootView.addGestureRecognizer(pan)
+        //rootView.addGestureRecognizer(pinch)
     }
     
     
@@ -40,16 +43,19 @@ class ViewController: UIViewController {
     
     func handlePinch(recognizer : UIPinchGestureRecognizer) {
         if let view = recognizer.view {
-            let touch0: CGPoint = recognizer.locationOfTouch(0, inView: view)
-            let touch1: CGPoint = recognizer.locationOfTouch(1, inView: view)
-            let tangent: CGFloat = abs((touch1.y - touch0.y) / (touch1.x - touch0.x))
-            if (tangent >  1) { //horizontal - remember we flip x & y inside SliderObject
-                view.transform = CGAffineTransformScale(view.transform,
-                    1, recognizer.scale)
-            } else if (tangent < 1) {  // verticalview.
-                view.transform = CGAffineTransformScale(view.transform,
-                recognizer.scale, 1)
-            } else {   // perfectly 45 degrees
+            
+            if (view is SliderObject) && (recognizer.numberOfTouches()==2) {
+                let touch0: CGPoint = recognizer.locationOfTouch(0, inView: view)
+                let touch1: CGPoint = recognizer.locationOfTouch(1, inView: view)
+                let tangent: CGFloat = abs((touch1.y - touch0.y) / (touch1.x - touch0.x))
+                if (tangent >=  1) { //horizontal - remember we flip x & y inside SliderObject
+                    view.transform = CGAffineTransformScale(view.transform,
+                        1, recognizer.scale)
+                } else if (tangent < 1) {  // verticalview.
+                    view.transform = CGAffineTransformScale(view.transform,
+                        recognizer.scale, 1)
+                }
+            } else {
                 view.transform = CGAffineTransformScale(view.transform,
                     recognizer.scale, recognizer.scale)
             }

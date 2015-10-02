@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -38,12 +39,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="K0w-eZ-LGt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="7OR-xC-oFm"/>
+                            <constraint firstItem="Utn-i1-d7V" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="BV8-RF-Eec"/>
                             <constraint firstItem="Utn-i1-d7V" firstAttribute="top" secondItem="Fqf-tX-vrK" secondAttribute="bottom" constant="8" id="DKE-uq-vk8"/>
                             <constraint firstItem="Fqf-tX-vrK" firstAttribute="top" secondItem="K0w-eZ-LGt" secondAttribute="bottom" constant="8" id="DR8-JO-obI"/>
+                            <constraint firstItem="Fqf-tX-vrK" firstAttribute="top" secondItem="K0w-eZ-LGt" secondAttribute="bottom" constant="8" id="HnF-Ub-jfr"/>
                             <constraint firstItem="K0w-eZ-LGt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="J6A-nS-DJO"/>
                             <constraint firstItem="Fqf-tX-vrK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="T7F-Gs-j6k"/>
+                            <constraint firstItem="Fqf-tX-vrK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ava-3T-zcg"/>
+                            <constraint firstItem="Utn-i1-d7V" firstAttribute="top" secondItem="Fqf-tX-vrK" secondAttribute="bottom" constant="8" id="fWR-cJ-NjZ"/>
                             <constraint firstItem="Utn-i1-d7V" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hAP-vf-BaL"/>
                             <constraint firstItem="K0w-eZ-LGt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="vbe-Q9-uyO"/>
+                            <constraint firstItem="K0w-eZ-LGt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="x8j-Gc-6ms"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -52,11 +59,17 @@
                                 <exclude reference="Utn-i1-d7V"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="7OR-xC-oFm"/>
                                 <exclude reference="J6A-nS-DJO"/>
                                 <exclude reference="vbe-Q9-uyO"/>
+                                <exclude reference="x8j-Gc-6ms"/>
                                 <exclude reference="DR8-JO-obI"/>
+                                <exclude reference="HnF-Ub-jfr"/>
                                 <exclude reference="T7F-Gs-j6k"/>
+                                <exclude reference="ava-3T-zcg"/>
+                                <exclude reference="BV8-RF-Eec"/>
                                 <exclude reference="DKE-uq-vk8"/>
+                                <exclude reference="fWR-cJ-NjZ"/>
                                 <exclude reference="hAP-vf-BaL"/>
                             </mask>
                         </variation>
@@ -67,12 +80,18 @@
                                 <include reference="Utn-i1-d7V"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="J6A-nS-DJO"/>
-                                <include reference="vbe-Q9-uyO"/>
-                                <include reference="DR8-JO-obI"/>
-                                <include reference="T7F-Gs-j6k"/>
-                                <include reference="DKE-uq-vk8"/>
-                                <include reference="hAP-vf-BaL"/>
+                                <include reference="7OR-xC-oFm"/>
+                                <exclude reference="J6A-nS-DJO"/>
+                                <exclude reference="vbe-Q9-uyO"/>
+                                <include reference="x8j-Gc-6ms"/>
+                                <exclude reference="DR8-JO-obI"/>
+                                <include reference="HnF-Ub-jfr"/>
+                                <exclude reference="T7F-Gs-j6k"/>
+                                <include reference="ava-3T-zcg"/>
+                                <include reference="BV8-RF-Eec"/>
+                                <exclude reference="DKE-uq-vk8"/>
+                                <include reference="fWR-cJ-NjZ"/>
+                                <exclude reference="hAP-vf-BaL"/>
                             </mask>
                         </variation>
                     </view>
